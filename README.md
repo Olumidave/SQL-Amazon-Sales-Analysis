@@ -1,6 +1,6 @@
 # 🛒 Amazon Sales Analysis | SQL Data Analytics Project
 
-> **A comprehensive SQL analytics project analyzing Amazon e-commerce sales data — covering revenue performance, product rankings, customer segmentation, geographic distribution, and discount impact analysis using Microsoft SQL Server.**
+> **A comprehensive SQL analytics project analyzing Amazon e-commerce sales data covering revenue performance, product rankings, customer segmentation, geographic distribution, and discount impact analysis using Microsoft SQL Server.**
 
 ---
 
@@ -25,9 +25,9 @@
 ## Business Context & Objectives
 
 ### The Business Problem
-E-commerce platforms like Amazon generate millions of transactions daily. Without structured SQL analysis, critical business questions go unanswered — which products are truly performing, which customers are most valuable, where revenue is concentrated geographically, and whether discounting is helping or hurting the business.
+E-commerce platforms like Amazon generate millions of transactions daily. Without structured SQL analysis, critical business questions go unanswered which products are truly performing, which customers are most valuable, where revenue is concentrated geographically, and whether discounting is helping or hurting the business.
 
-This project was built to answer those questions systematically using SQL — transforming raw transactional data into structured business intelligence that can drive product, marketing, and operational decisions.
+This project was built to answer those questions systematically using SQL transforming raw transactional data into structured business intelligence that can drive product, marketing, and operational decisions.
 
 ### Business Objectives
 
@@ -35,16 +35,16 @@ This project was built to answer those questions systematically using SQL — tr
 Calculate total revenue, delivered revenue, average order value, and unique customer counts as the baseline for all further analysis.
 
 **2. Identify Top and Bottom Performing Products**
-Rank products by units sold and revenue generated — identifying stars to invest in and underperformers to review or discontinue.
+Rank products by units sold and revenue generated identifying stars to invest in and underperformers to review or discontinue.
 
 **3. Analyse the Impact of Discounting**
-Determine whether discounted products actually sell more than non-discounted products — and whether discounting is helping revenue or compressing margins.
+Determine whether discounted products actually sell more than non-discounted products and whether discounting is helping revenue or compressing margins.
 
 **4. Segment Customers by Value and Behaviour**
 Identify high-value customers, repeat buyers, and purchase frequency patterns to support targeted retention and marketing strategies.
 
 **5. Map Revenue Across Geographies**
-Understand which countries and states generate the most revenue — and where shipping costs are highest — to inform logistics and market expansion decisions.
+Understand which countries and states generate the most revenue and where shipping costs are highest to inform logistics and market expansion decisions.
 
 **6. Evaluate Seller and Brand Performance**
 Identify which sellers and brands generate the highest revenue on the platform to support partnership and promotional decisions.
@@ -68,7 +68,7 @@ CREATE DATABASE Amazon;
 ```
 
 **Step 2 — Duplicate Removal**
-Duplicates were identified and removed using a CTE with ROW_NUMBER() — keeping only the first occurrence of each OrderID:
+Duplicates were identified and removed using a CTE with ROW_NUMBER() keeping only the first occurrence of each OrderID:
 
 ```sql
 WITH Duplicates AS (
@@ -98,18 +98,18 @@ This ensures discount amounts are correctly deducted from gross revenue to give 
 ## Analytical Methodology & Approach
 
 ### The SQL Analysis Framework
-This project is structured across **5 analytical layers** — each building on the previous to move from basic KPIs to deep business intelligence:
+This project is structured across **5 analytical layers** each building on the previous to move from basic KPIs to deep business intelligence:
 
 ```
-Layer 1 — Core KPIs          (What is the baseline performance?)
+Layer 1 - Core KPIs          (What is the baseline performance?)
        ↓
-Layer 2 — Product Analysis   (Which products are driving and dragging performance?)
+Layer 2 - Product Analysis   (Which products are driving and dragging performance?)
        ↓
-Layer 3 — Discount Analysis  (Is discounting working?)
+Layer 3 - Discount Analysis  (Is discounting working?)
        ↓
-Layer 4 — Customer Analysis  (Who are the most valuable customers?)
+Layer 4 - Customer Analysis  (Who are the most valuable customers?)
        ↓
-Layer 5 — Geographic & Seller Analysis  (Where and who is driving revenue?)
+Layer 5 - Geographic & Seller Analysis  (Where and who is driving revenue?)
 ```
 
 ### Key SQL Techniques Used
@@ -162,7 +162,7 @@ FROM Amazon;
 
 ---
 
-### Section 2 — Product Performance Analysis
+### Section 2 - Product Performance Analysis
 
 ```sql
 -- Top 10 Products by Units Sold
@@ -209,7 +209,7 @@ ORDER BY Total_Revenue DESC;
 
 ---
 
-### Section 3 — Product Ranking & Classification
+### Section 3 - Product Ranking & Classification
 
 ```sql
 -- Product Performance Ranking (Delivered Orders Only)
@@ -252,7 +252,7 @@ ORDER BY Total_Revenue DESC;
 
 ---
 
-### Section 4 — Discount Impact Analysis
+### Section 4 - Discount Impact Analysis
 
 ```sql
 -- Do Discounted Products Sell More Than Non-Discounted?
@@ -272,7 +272,7 @@ GROUP BY
 
 ---
 
-### Section 5 — Order Status Analysis
+### Section 5 - Order Status Analysis
 
 ```sql
 -- Percentage of Orders by Status (Cancelled vs Delivered vs Other)
@@ -286,7 +286,7 @@ ORDER BY Percentage_Status DESC;
 
 ---
 
-### Section 6 — Customer Segmentation
+### Section 6 - Customer Segmentation
 
 ```sql
 -- Repeat Buyers (Customers with More Than 1 Order)
@@ -309,7 +309,7 @@ ORDER BY Purchase_Frequency DESC;
 
 ---
 
-### Section 7 — Geographic & Seller Analysis
+### Section 7 - Geographic & Seller Analysis
 
 ```sql
 -- Revenue by Country
@@ -443,9 +443,9 @@ FROM CustomerRevenue;
 ### Geographic Metrics Tracked
 - Total revenue by country
 - Total revenue by state
-- Average shipping cost by country — identifying high-cost logistics markets
-- Seller revenue ranking — identifying top platform contributors
-- Brand revenue ranking — identifying strongest brand partnerships
+- Average shipping cost by country - identifying high-cost logistics markets
+- Seller revenue ranking - identifying top platform contributors
+- Brand revenue ranking - identifying strongest brand partnerships
 
 ### Shipping Cost Intelligence
 High shipping cost countries identified through:
@@ -534,7 +534,7 @@ CREATE DATABASE Amazon;
 ```
 4. Import `Amazon_dataset.csv` into the database using the SSMS Import Wizard or BULK INSERT
 5. Open `Amazon_Sales_Query.sql` in SSMS
-6. Run queries **section by section** — each section is clearly labelled with comments
+6. Run queries **section by section** - each section is clearly labelled with comments
 7. Results can be exported to Excel for further analysis or visualisation
 
 ---
